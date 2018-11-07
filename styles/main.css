@@ -3,3 +3,114 @@
     padding: 0;
     font-family: "helvetica";
 }
+
+.content {
+
+}
+
+.header {
+
+}
+
+.header img {
+    display: block;
+    margin: 6px auto;
+    float: center;
+    height: 90px;
+}
+
+.header h2 {
+    text-align: center;
+    display: block;
+    font-family: Pacifico,cursive;
+    font-style: italic;
+}
+
+.Next {
+    margin: 6px auto;
+    display: block;
+}
+
+
+button {
+    background: #009F22;
+    padding: 9px 30px;
+    border: black;
+    color: #FFF;
+    border-radius: 12px;
+    font-size: 15px;
+    border-bottom: 5px solid #007F22;
+}
+
+button:hover, button:focus {
+    font-weight: bold;
+    color: #FFF;
+}
+
+button:active {
+    color: #000;
+}
+
+
+/******** MODAL **********/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100% ;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background: #f4f4f4;
+    margin: 12% auto;
+    padding: 20px;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2)
+}
+
+.modal-header h4 {
+    text-align: center;
+    color: #00CCFD;
+}
+
+#closeModal {
+    font-size: 42px;
+    color: #999999;
+    cursor: pointer;
+    padding: 0;
+}
+
+#closeModal:hover, .closeModal:focus {
+    color: #000;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 6px auto;
+}
+
+.modal-body ul li {
+    list-style: none;
+    margin: 12px;
+    text-align: center;
+}
+
+.modal-body ul li input {
+    border: none;
+    border-bottom: 2px solid #999;
+    background: #f4f4f4;
+}
+
+.modal-body ul li button {
+    margin: 6px auto;
+    display: block;
+}
+
+.right {
+    float: right;
+}
