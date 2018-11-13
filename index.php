@@ -11,19 +11,15 @@ require "../conn.php";
         <!-- content -->
         <div class="content">
             <!-- header -->
-            <div class="header">
+            <header>
                 <img src="images/Link_logo.jpg" alt="Link Logo">
                 <h2>
                     Welcome to our online payment gateway!
                     <button type="button" class="button Next" name="buttonProceed" id="openModal">Proceed</button>
                 </h2>
-            </div>
+            </header>
             <!-- end of header -->
             <!-- index -->
-            <div class="index">
-
-            </div>
-            <!-- end of index -->
         </div>
         <!-- end of content -->
         <!-- modal -->

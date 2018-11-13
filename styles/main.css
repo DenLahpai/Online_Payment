@@ -4,26 +4,99 @@
     font-family: "helvetica";
 }
 
+body {
+    background: #fff;
+}
+
 .content {
-
+    /* margin: 0px 30px; */
+    background: #E6E6E6;
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    " header header header header header header "
+    " nav nav nav nav nav nav "
+    " main main main main main main "
+    " aside aside aside aside aside aside "
+    " footer footer footer footer footer footer "
+    ;
 }
 
-.header {
-
+header {
+    grid-area: header;
+    background: #F2F1F1;
 }
 
-.header img {
+header img {
     display: block;
     margin: 6px auto;
     float: center;
     height: 90px;
 }
 
-.header h2 {
+header h2 {
     text-align: center;
     display: block;
     font-family: Pacifico,cursive;
     font-style: italic;
+}
+
+nav {
+    grid-area: nav;
+    background: #009F00;
+}
+
+nav ul a li {
+    display: inline-flex;
+    padding: 12px 12px;
+}
+
+nav ul a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+nav ul a li:hover, nav ul a li:focus {
+    background: #01CFFF;
+    color: #000;
+}
+
+main {
+    grid-area: main;
+}
+
+main table {
+    border-collapse: collapse;
+    margin: 6px auto;
+}
+
+main table thead tr th, main table tbody tr td {
+    padding: 6px 12px;
+    border: 1px solid black;
+}
+
+main table tr th input {
+    border: none;
+    background: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+main table tbody tr td {
+    text-align: center;
+}
+
+main table tbody tr th {
+    padding: 6px;
+}
+
+footer {
+    grid-area: footer;
+    background: #01CFFF;
+    text-align: center;
+    padding: 6px;
+    color: white;
 }
 
 .Next {
@@ -31,15 +104,15 @@
     display: block;
 }
 
-
 button {
-    background: #009F22;
+    background: #009F00;
     padding: 9px 30px;
     border: black;
     color: #FFF;
     border-radius: 12px;
     font-size: 15px;
-    border-bottom: 5px solid #007F22;
+    border-bottom: 5px solid #009F00;
+    text-align: center;
 }
 
 button:hover, button:focus {
@@ -75,7 +148,7 @@ button:active {
 
 .modal-header h4 {
     text-align: center;
-    color: #00CCFD;
+    color: #01CFFF;
 }
 
 #closeModal {
