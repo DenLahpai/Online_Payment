@@ -91,6 +91,17 @@ main table tbody tr th {
     padding: 6px;
 }
 
+main ul li {
+    text-align: center;
+    padding: 6px;
+}
+
+main ul li input {
+    border: 0;
+    border-bottom: 2px solid #999;
+    background: none;
+}
+
 footer {
     grid-area: footer;
     background: #01CFFF;

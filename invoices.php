@@ -1,6 +1,9 @@
 <?php
 require_once "functions.php";
 
+//checking if the user is logged in
+check_login();
+
 //getting data from the talbe Online_payers
 $Online_payers_Email = $_SESSION['Online_payers_Email'];
 
@@ -15,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $BookingReference = $_REQUEST['BookingReference'];
     $TransactionAmount = $_REQUEST['Total'] * 100;
 }
-
 
 ?>
 <!DOCTYPE html>

@@ -1,9 +1,11 @@
 <?php
 require_once "../conn.php";
 
-//checking if the user is logged in
-if (!isset($_SESSION['Online_payers_Email'])) {
-    header("location: index.php");
+//function to check if the user is logged in
+function check_login() {
+    if (!isset($_SESSION['Online_payers_Email'])) {
+        header("location: index.php");
+    }
 }
 
 //function to get data from the table Online_payers
@@ -39,8 +41,19 @@ function table_Online_payers($job, $a, $b) {
             $database->bind(':Email', $a);
             return $r = $database->resultset();
             break;
-        case 'sum':
-            // echo "select-all";
+
+        case 'select-one':
+            $query = "SELECT * FROM Online_payers WHERE Email = :Email ;";
+            $database->query($query);
+            $database->bind(':Email', $a);
+            return $r = $database->resultset();
+            break;
+
+        case 'rowCount':
+            $query = "SELECT * FROM Online_payers WHERE Email = :Email ;";
+            $database->query($query);
+            $database->bind(':Email', $a);
+            return $r = $database->rowCount();
             break;
 
         default:
