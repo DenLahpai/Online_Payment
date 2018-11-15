@@ -29,6 +29,13 @@ else {
                     <?php echo $message; ?>
                 </h2>
             </header>
+            <main>
+                <ul>
+                    <li>
+                        <a href="index.php">Go back to login page</a>
+                    </li>
+                </ul>
+            </main>
             <?php include "includes/footer.html"; ?>
         </div>
         <!-- end of content -->

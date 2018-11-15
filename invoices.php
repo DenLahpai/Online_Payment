@@ -12,6 +12,11 @@ foreach ($rows_Online_payers as $row_Online_payers) {
     // code...
 }
 
+$rows_sum = table_Online_payers('sum', $Online_payers_Email, NULL);
+foreach ($rows_sum as $row_sum) {
+    // code...
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // getting the data from the form to be sent to the payment gateway server
     $BookingName = $_REQUEST['BookingName'];
@@ -77,9 +82,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             }
                             ?>
                             <tr>
-                                <th colspan="2">
-                                <th colspan="2">Total in USD:</th>
-                                    <input type="number" name="Total" value="<?php echo $row_Online_payers->Total; ?>" step="0.01">
+                                <th colspan="2">Outstanding balance in USD:</th>
+                                <th>
+                                    <input type="number" name="Total" value="<?php echo $row_sum->Total; ?>" step="0.01" readonly>
                                 </th>
                                 <tr>
                                     <th colspan="4">

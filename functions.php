@@ -14,6 +14,34 @@ function table_Online_payers($job, $a, $b) {
 
     switch ($job) {
         //selecting one row from the table
+        case 'sum':
+        $query = "SELECT
+            Invoices.InvoiceDate,
+            SUM(Invoices.USD) AS Total,
+            Invoices.USD,
+            Invoices.Status,
+            InvoiceHeader.Addressee,
+            InvoiceHeader.Address,
+            InvoiceHeader.City,
+            InvoiceHeader.Attn,
+            Bookings.Reference,
+            Bookings.Name,
+            Online_payers.InvoiceNo
+            FROM Online_payers
+            LEFT JOIN Invoices
+            ON Online_payers.InvoiceNo = Invoices.InvoiceNo
+            LEFT JOIN InvoiceHeader
+            ON Online_payers.InvoiceNo = InvoiceHeader.InvoiceNo
+            LEFT JOIN Bookings
+            ON Bookings.Id = Invoices.BookingsId
+            WHERE Online_payers.Email = :Email
+            AND Invoices.Status != 'PAID'
+        ;";
+            $database->query($query);
+            $database->bind(':Email', $a);
+            return $r = $database->resultset();
+            break;
+
         case 'select-all':
             $query = "SELECT
                 Invoices.InvoiceDate,
@@ -35,7 +63,6 @@ function table_Online_payers($job, $a, $b) {
                 LEFT JOIN Bookings
                 ON Bookings.Id = Invoices.BookingsId
                 WHERE Online_payers.Email = :Email
-                AND Invoices.Status != 'PAID'
             ;";
             $database->query($query);
             $database->bind(':Email', $a);
