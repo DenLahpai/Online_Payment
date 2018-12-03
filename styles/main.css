@@ -102,6 +102,10 @@ main ul li input {
     background: none;
 }
 
+main p {
+    text-align: center;
+}
+
 footer {
     grid-area: footer;
     background: #01CFFF;

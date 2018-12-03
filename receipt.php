@@ -55,10 +55,10 @@ foreach ($rows_sum as $row_sum) {
                     //Getting response code etc...
                     $txnResponseCode=$_GET['vpc_TxnResponseCode'];
 
-                    $receiptNo=getValue("vpc_ReceiptNo");
-        			$transactionNo=getValue("vpc_TransactionNo");
-                    $amount=getValue("vpc_Amount");
-                    $real_amount = round($amount / 100, 2);
+                    $receiptNo = getValue("vpc_ReceiptNo");
+        			$transactionNo = getValue("vpc_TransactionNo");
+                    $amount = getValue("vpc_Amount") / 100;
+                    $real_amount = round($amount, 2);
 
                     if ($txnResponseCode==="0") {
                         echo "Transaction was successful! <br>";
@@ -73,13 +73,13 @@ foreach ($rows_sum as $row_sum) {
                     // emailing results
                     $subject = "Transaction Result From Link In Myanmar Travel";
 
-                    $message = "<p style=\"text-align: center\">";
+                    $message = "<p style=\"text-align: center;\">";
                     $message = "<h2 style=\"text-decoration: underline;\">Tranaction Result</h2>";
                     $message .= "Receipt No: ".$receiptNo."<br>";
         			$message .= "Transaction No: ".$transactionNo."<br>";
         			$message .= "Transaction Amount: ".$real_amount." USD<br>";
-                    if ($txnResponseCode==="0") {
-                        $message .= "Result: Transaction was successful! <br>"
+                    if ($txnResponseCode === "0") {
+                        $message .= "Result: Transaction was successful! <br>";
                     }
                     else {
                         $message .= "Result: Transaction was unsuccessful! <br>";
