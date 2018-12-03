@@ -1,6 +1,5 @@
 <?php
 require_once "functions.php";
-
 //checking if the user is logged in
 check_login();
 
@@ -98,7 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </main>
             <?php include "includes/footer.html"; ?>
         </div>
-
         <!-- end of content -->
     </body>
 </html>
